@@ -10,4 +10,17 @@
         cursor: pointer;
     }
 
+    .informacoes-container{
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    
+        .card-container{
+            min-width: 25%;
+            max-width: 25%;
+        }
+        
+    }
 }

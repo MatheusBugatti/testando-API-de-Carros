@@ -1,12 +1,19 @@
 <section class="section-principal">
     <h1 class="po-font-title">MARCA CARRROS</h1>
 </section>
+<po-select
+  name="select"
+  p-label="PO Select"
+  [p-options]="opcoesMarcas"
+  (p-change)="getOpcao($event)"
+>
+</po-select>
 
 <div class="informacoes-container">
-    @for(marcas of marcasCarro; track marcas){
+    @for(marca of marcasCarro; track marca){
         <div class="card-container" >
             <card
-                [marcaCarro]="marcas"
+                [marcaCarro]="marca"
             ></card>
         </div>
     }   

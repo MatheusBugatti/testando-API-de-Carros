@@ -1,0 +1,13 @@
+.section-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //midida relativa ao tamanho da pagina a cada 1rem é 16 pixel da tela
+    margin-top: 1rem;
+
+    h1{
+        color:  rgb(243, 243, 243);
+        cursor: pointer;
+    }
+
+}

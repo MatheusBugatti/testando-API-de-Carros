@@ -1,0 +1,13 @@
+<section class="section-principal">
+    <h1 class="po-font-title">MARCA CARRROS</h1>
+</section>
+
+<div class="informacoes-container">
+    @for(marcas of marcasCarro; track marcas){
+        <div class="card-container" >
+            <card
+                [marcaCarro]="marcas"
+            ></card>
+        </div>
+    }   
+</div>

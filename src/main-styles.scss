@@ -1,0 +1,10 @@
+html, body {
+    height: 100%
+}
+
+html {
+    background-image: url('../src/assets/backgorund.svg');
+    background-size: cover;
+
+    overflow-y: auto !important;
+}

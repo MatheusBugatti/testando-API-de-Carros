@@ -19,4 +19,12 @@ export class MarcasService {
     return this._http.get<IMarcas>(`${this._url}/carros/marcas`)
   }
 
+  getMarcaCaminhao(){
+    return this._http.get<IMarcas>(`${this._url}/caminhoes/marcas`)
+  }
+
+  getVeiculoPorTipo(tipoVeiculo: string){
+    return this._http.get<IMarcas>(`${this._url}/${tipoVeiculo}/marcas`)
+  }
+
 }

@@ -3,8 +3,36 @@ html, body {
 }
 
 html {
-    background-image: url('../src/assets/backgorund.svg');
     background-size: cover;
-
     overflow-y: auto !important;
+    
+}
+
+.po-menu {
+    z-index: 99;
+}
+
+.po-menu-list {
+    white-space: nowrap !important;
+    padding-left: 0 !important;
+}
+
+.w-40{
+    width: 40%;
+}
+
+.w-50{
+    width: 50%;
+}
+
+.w-60{
+    width: 60%;
+}
+
+.h-40{
+    height: 40%;
+}
+
+.h-400px{
+    height: 400px;
 }

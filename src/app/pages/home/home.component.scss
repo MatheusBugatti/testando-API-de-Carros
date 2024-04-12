@@ -1,12 +1,27 @@
+@import '../../../main-styles.scss';
+
+main{
+    margin-left: 4rem;
+    width: auto;
+    overflow-x: hidden;
+    .selects-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        
+    }
+}
 .section-principal{
     display: flex;
     justify-content: center;
     align-items: center;
     //midida relativa ao tamanho da pagina a cada 1rem é 16 pixel da tela
     margin-top: 1rem;
+    
 
     h1{
-        color:  rgb(243, 243, 243);
+        color:  rgb(0, 0, 0);
         cursor: pointer;
     }
 
@@ -16,6 +31,8 @@
         flex-wrap: wrap;
         gap: 1.5rem;
         justify-content: center;
+        border-width: 30px;
+        border-color: #000000;
     
         .card-container{
             min-width: 25%;

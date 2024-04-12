@@ -1,20 +1,53 @@
-<section class="section-principal">
-    <h1 class="po-font-title">MARCA CARRROS</h1>
-</section>
-<po-select
-  name="select"
-  p-label="PO Select"
-  [p-options]="opcoesMarcas"
-  (p-change)="getOpcao($event)"
->
-</po-select>
+<main>
+        <section class="section-principal">
+            <h1 (click)="recarregarPagina()" class="po-font-title">Consulta Marcas</h1>
+        </section>
 
-<div class="informacoes-container">
-    @for(marca of marcasCarro; track marca){
-        <div class="card-container" >
-            <card
-                [marcaCarro]="marca"
-            ></card>
+        <div class="selects-container">
+
+             <div class="w-40">
+                <po-select
+                  name="tipoVeiculoSelecionado"
+                  p-label="Tipo de Veículo"
+                  p-placeholder="Selecione o tipo de veículo"
+                  [p-options]="opcoesVeiculos"
+                  (p-change)="getTipoVeiculo($event)"
+                  
+                >
+                </po-select>
+            </div>
+
+            <div class="w-40">
+                @if(opcoesMarcas.length > 0){
+                    <po-select
+                      name="select"
+                      p-label="Selecione a marca"
+                      [p-options]="opcoesMarcas"
+                      (p-change)="getOpcao($event)"
+                    >
+                    </po-select>
+                }
+            </div>
         </div>
-    }   
-</div>
+            
+        <div class="informacoes-container">
+            @for(marca of marcasVeiculos; track marca){
+                <div class="card-container" >
+                    <card
+                        [marcaCarro]="marca"
+                    ></card>
+                </div>
+            }   
+        </div>
+
+        @if(mostrarLoading == true){
+            <div class="po-loading" >
+                    <po-loading-overlay 
+                        [p-screen-lock]="true"
+                    ></po-loading-overlay>
+            </div>
+        }
+    
+    
+</main>
+

@@ -2,44 +2,66 @@
         <section class="section-principal">
             <h1 (click)="recarregarPagina()" class="po-font-title">Consulta Marcas</h1>
         </section>
-
-        <div class="selects-container">
-
-             <div class="w-40">
-                <po-select
-                  name="tipoVeiculoSelecionado"
-                  p-label="Tipo de Veículo"
-                  p-placeholder="Selecione o tipo de veículo"
-                  [p-options]="opcoesVeiculos"
-                  (p-change)="getTipoVeiculo($event)"
-                  
-                >
-                </po-select>
-            </div>
-
-            <div class="w-40">
-                @if(opcoesMarcas.length > 0){
+        
+        <div class="info-container">
+            <div class="select-container w-100 po-xl-12 po-lg-12 po-md-12 po-sm-12">
+                <div class="w-40 po-xl-6 po-lg-6 po-md-6 po-sm-6">
                     <po-select
-                      name="select"
-                      p-label="Selecione a marca"
-                      [p-options]="opcoesMarcas"
-                      (p-change)="getOpcao($event)"
+                      name="tipoVeiculoSelecionado"
+                      p-label="Tipo de Veículo"
+                      p-placeholder="Selecione o tipo de veículo"
+                      [p-options]="opcoesVeiculos"
+                      (p-change)="getTipoVeiculo($event)"
                     >
                     </po-select>
-                }
+                </div>
+    
+                <div class="w-40 po-xl-6 po-lg-6 po-md-6 po-sm-6">
+                    @if(opcoesMarcas.length > 0){
+                        <po-select
+                          name="select"
+                          p-label="Selecione a marca"
+                          [p-options]="opcoesMarcas"
+                          (p-change)="listarModelos($event)"
+                        >
+                        </po-select>
+                    }
+                </div>
+                
+                <div class="w-40 po-xl-6 po-lg-6 po-md-6 po-sm-6">
+                    @if(opcoesModelos.length > 0){
+                        <po-select
+                            name="select"
+                            p-label="Modelo do Veículo"
+                            p-placeholder="Selecione o modelo do veículo"
+                            [p-options]="opcoesModelos"
+                            (p-change)="listarAno($event)"
+                        >
+                        </po-select>
+                    }
+                </div>
+    
+                <div class="w-40 po-xl-6 po-lg-6 po-md-6 po-sm-6">
+                    @if(opcoesAno.length > 0){
+                        <po-select
+                            name="select"
+                            p-label="Ano do Veículo"
+                            p-placeholder="Selecione o ano do veículo"
+                            [p-options]="opcoesAno"
+                            (p-change)="listarFipe($event)"
+                        >
+                        </po-select>
+                     }
+                </div>
+            </div>
+            <div class="po-xl-8 po-lg-8 po-md-8 po-sm-8">
+                <po-dynamic-form 
+                    [p-fields]="formFipeFields"
+                    [p-value]="fullFipe"
+                />
             </div>
         </div>
-            
-        <div class="informacoes-container">
-            @for(marca of marcasVeiculos; track marca){
-                <div class="card-container" >
-                    <card
-                        [marcaCarro]="marca"
-                    ></card>
-                </div>
-            }   
-        </div>
-
+        
         @if(mostrarLoading == true){
             <div class="po-loading" >
                     <po-loading-overlay 

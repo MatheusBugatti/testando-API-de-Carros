@@ -21,7 +21,7 @@ export class MenuComponent {
 
   constructor(private _router: Router){}
 
-  private navigateTo(route: string): void {
+  navigateTo(route: string): void {
     this._router.navigate([route]);
   }
 }
